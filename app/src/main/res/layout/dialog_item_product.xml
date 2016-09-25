@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="0dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        style="@style/CardView.Base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/product_et"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:hint="单价"
+                android:singleLine="true"
+                android:textSize="@dimen/mid_text_size" />
+
+            <EditText
+                android:id="@+id/count_et"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:layout_marginLeft="10dp"
+                android:hint="个数"
+                android:singleLine="true"
+                android:textSize="@dimen/mid_text_size" />
+
+            <EditText
+                android:id="@+id/packing_fee_et"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:layout_marginLeft="10dp"
+                android:hint="包装费"
+                android:singleLine="true"
+                android:textSize="@dimen/mid_text_size" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="计算优惠" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

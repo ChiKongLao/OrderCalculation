@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="起送价:"
+            android:textColor="@color/text_black">
+
+            <requestFocus />
+        </TextView>
+
+        <EditText
+            android:id="@+id/min_total_price_et"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="配送费:"
+            android:textColor="@color/text_black" />
+
+        <EditText
+            android:id="@+id/freight_price_et"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="其它优惠:"
+            android:textColor="@color/text_black" />
+
+        <EditText
+            android:id="@+id/other_cut_et"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="每人使用红包最大数:"
+            android:textColor="@color/text_black" />
+
+        <EditText
+            android:id="@+id/red_packets_count_et"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="最大拆单数:"
+            android:textColor="@color/text_black" />
+
+        <EditText
+            android:id="@+id/order_count_et"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textSize="@dimen/main_text_size" />
+        <!--android:hint="0代表无限制"-->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="优惠分配:"
+            android:textColor="@color/text_black" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/average_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:checked="true"
+                android:text="平均" />
+
+            <RadioButton
+                android:id="@+id/percent_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="百分比" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/freight_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运费添加到满减计算" />
+
+        <CheckBox
+            android:id="@+id/packing_fee_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="包装费添加到满减计算" />
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        style="@style/CardView.Base"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1">
+
+        <include layout="@layout/common_recyclerview" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/add_layout"
+        style="@style/CardView.Click"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:onClick="onClick">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_corner_cancel_selector"
+            android:gravity="center"
+            android:text="添加"
+            android:textColor="@color/text_black" />
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
